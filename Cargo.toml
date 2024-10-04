@@ -1,0 +1,17 @@
+[package]
+name = "blake2_wrapper"  # The name of your Rust package
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+edition = "2021"
+
+[dependencies]
+pyo3 = { version = "0.18", features = ["extension-module"] }
+blake2 = "0.10"
+digest = "0.10"  # Add the blake2 crate
+hex = "0.4"
+
+[lib]
+crate-type = ["cdylib"]  # For building a shared library for Python
+
+[package.metadata.pyo3]
+name = "blake2_wrapper"  # Python module name
