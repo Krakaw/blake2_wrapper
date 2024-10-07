@@ -14,7 +14,7 @@ fn blake2b_hash(data: &[u8]) -> PyResult<String> {
 
 /// Function to hash data with Blake2bVar
 #[pyfunction]
-fn blake2bvar_hash(data: &[u8], output_size: usize, version: String) -> PyResult<String> {
+fn blake2bvar_hash(data: &[u8], output_size: usize) -> PyResult<String> {
     use blake2::digest::Update;
     let mut hasher = Blake2bVar::new(output_size).unwrap();
     hasher.update(data);
